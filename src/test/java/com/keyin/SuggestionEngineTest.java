@@ -23,6 +23,7 @@ public class SuggestionEngineTest {
     @Test
     public void testGenerateSuggestionsMissing() throws Exception {
         suggestionEngine.loadDictionaryData( Paths.get( ClassLoader.getSystemResource("words.txt").getPath()));
+        //System.out.println(suggestionEngine.generateSuggestions("ello"));
         Assertions.assertTrue(suggestionEngine.generateSuggestions("ello").contains("hello"));
     }
 
@@ -37,6 +38,7 @@ public class SuggestionEngineTest {
     @Test
     public void testGenerateSuggestionsLessWithMistake() throws Exception {
         suggestionEngine.loadDictionaryData( Paths.get( ClassLoader.getSystemResource("words.txt").getPath()));
+        //System.out.println(suggestionEngine.generateSuggestions("hilo"));
         Assertions.assertTrue(suggestionEngine.generateSuggestions("hilo").contains("hello"));
     }
 
